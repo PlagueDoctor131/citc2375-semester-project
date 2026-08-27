@@ -5,3 +5,13 @@ Title is Music Collection and Suggestions, a place for me to collect and suggest
 - GitHub Repository: https://github.com/PlagueDoctor131/citc2375-semester-project
 - Live Site: https://citc2375-semester-project-ggraves.onrender.com
 - Project Topic: A place for me to collect and suggest music for all those who would like to partake.
+
+## Planned Data Model
+- Header
+- Category
+- Genre
+- Mp3
+- Image
+- Artist
+- Name
+- Hyperlink
