@@ -20,3 +20,6 @@ Title is Music Collection and Suggestions, a place for me to collect and suggest
     Added styling within styles.css in order to differentiate cards, as well as making the formatting the same between all of the pages. Also added background imaging, and a backup background color if it doesn't load.
 
     Additionally, changed up where the header existed within the page!
+
+## Week 4 project progress
+    Added the required flexbox styling, as well as making the cards scroll correctly. I added the functionality to make images expand when hovering over them as well. Links have hover functionality, and i made the styling fit the requirements.

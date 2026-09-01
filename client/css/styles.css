@@ -1,5 +1,11 @@
+:root{
+    --color-background: rgb(193,42,95);
+    --color-text: #333;
+    --background-image: url(../images/background_image_blur.png);
+    --link-color: #000000;
+}
 .song-image {
-    width: 25%;
+    width: 100%;
     height: auto;
 }
 .content-width {
@@ -8,31 +14,59 @@
     padding:20px;
     text-align: center;
 }
+.content-width h1 {
+    color: var(--link-color);
+}
 body {
     font-family: arial,helvetica,sans-serif;
-    color: #333;
+    color: var(--color-text);
     padding: 20px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(../images/background_image_blur.png);
-    background-color: rgb(193,42,95);
+    background-image: var(--background-image);
+    background-color: var(--color-background);
 }
 .card {
+    flex: 1 1 50%;
+    max-width: 500px;
     background-color: #a5a4a4;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 15px;
     margin-bottom: 20px;
+    
+}
+.container{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
 }
 a:visited{
-    color: #800080;
+    color: var(--link-color);
 }
 a:link{
-    color:rgb(0, 0, 0);
+    color: var(--link-color);
 }
 a:hover{
     color: #ffffff;
 }
 a:focus{
     color:aqua;
+}
+.song-image:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+#preamble {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
 }
