@@ -15,3 +15,8 @@ Title is Music Collection and Suggestions, a place for me to collect and suggest
 - Artist
 - Name
 - Hyperlink
+
+## Project Progress
+    Added styling within styles.css in order to differentiate cards, as well as making the formatting the same between all of the pages. Also added background imaging, and a backup background color if it doesn't load.
+
+    Additionally, changed up where the header existed within the page!
