@@ -1,0 +1,38 @@
+.song-image {
+    width: 25%;
+    height: auto;
+}
+.content-width {
+    max-width: 100%;
+    margin: 0 auto;
+    padding:20px;
+    text-align: center;
+}
+body {
+    font-family: arial,helvetica,sans-serif;
+    color: #333;
+    padding: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../images/background_image_blur.png);
+    background-color: rgb(193,42,95);
+}
+.card {
+    background-color: #a5a4a4;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+a:visited{
+    color: #800080;
+}
+a:link{
+    color:rgb(0, 0, 0);
+}
+a:hover{
+    color: #ffffff;
+}
+a:focus{
+    color:aqua;
+}
