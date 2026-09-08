@@ -26,3 +26,6 @@ Title is Music Collection and Suggestions, a place for me to collect and suggest
 
 ## Week 5 project progress
     Added add.html, which contains a form that will eventually allow the users to add a song or similiar to the site. Also moved the header from the <head> to the <body>, as per feedback from previous weeks. No new entries onto the list this week, but there may be some soon. The form should work correctly, and uses browser validation.
+
+## Week 6 project progress
+    Short one this week - added app.js and added a few parameters that were requested. Started to use document.getelementbyid but then saw that the instructions specifically denied that so I have commented those out for now. displays messages in the console.
