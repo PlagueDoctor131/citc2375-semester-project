@@ -23,3 +23,6 @@ Title is Music Collection and Suggestions, a place for me to collect and suggest
 
 ## Week 4 project progress
     Added the required flexbox styling, as well as making the cards scroll correctly. I added the functionality to make images expand when hovering over them as well. Links have hover functionality, and i made the styling fit the requirements.
+
+## Week 5 project progress
+    Added add.html, which contains a form that will eventually allow the users to add a song or similiar to the site. Also moved the header from the <head> to the <body>, as per feedback from previous weeks. No new entries onto the list this week, but there may be some soon. The form should work correctly, and uses browser validation.
