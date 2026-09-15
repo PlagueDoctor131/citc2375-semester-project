@@ -1,104 +1,118 @@
-:root{
-    --color-background: rgb(193,42,95);
-    --color-text: #333;
-    --background-image: url(../images/background_image_blur.png);
-    --link-color: #000000;
+:root {
+  --color-background: rgb(193,42,95);
+  --color-text: #333;
+  --background-image: url(../images/background_image_blur.png);
+  --link-color: #000000;
 }
+
 .song-image {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
+
 .content-width {
-    max-width: 100%;
-    margin: 0 auto;
-    padding:20px;
-    text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
+
 .content-width h1 {
-    color: var(--link-color);
+  color: var(--link-color);
 }
+
 body {
-    font-family: arial,helvetica,sans-serif;
-    color: var(--color-text);
-    padding: 20px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: var(--background-image);
-    background-color: var(--color-background);
+  font-family: arial, helvetica, sans-serif;
+  color: var(--color-text);
+  padding: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: var(--background-image);
+  background-color: var(--color-background);
 }
+
 #add-music-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    background-color: #a5a4a4;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    justify-content: center;
-    margin-left: 25%;
-    margin-right: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #a5a4a4;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  margin-left: 25%;
+  margin-right: 25%;
 }
-input[type="text"], input[type="url"]{
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+
+input[type=text], input[type=url] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
-input[type="file"]{
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+
+input[type=file] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
-textarea{
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .card {
-    flex: 1 1 50%;
-    max-width: 500px;
-    background-color: #a5a4a4;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    margin-bottom: 20px;
-    
+  max-width: 500px;
+  background-color: #a5a4a4;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
 }
-.container{
-    display:flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    align-items: flex-start;
+
+.container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: baseline;
 }
+
 nav {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 }
-a:visited, a:link{
-    color: var(--link-color);
+
+a:visited, a:link {
+  color: var(--link-color);
 }
-a:hover{
-    color: #ffffff;
+
+a:hover {
+  color: #ffffff;
 }
-a:focus{
-    color:aqua;
+
+a:focus {
+  color: aqua;
 }
-.song-image:hover{
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
+
+.song-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
 }
+
 #preamble {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
 }
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -110,16 +124,19 @@ td, th {
   text-align: left;
   padding: 8px;
 }
+
 tr:nth-child(odd) {
   background-color: #f2f2f2;
 }
+
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
 caption {
   caption-side: top;
   text-align: center;
   font-style: italic;
   margin-top: 10px;
   background-color: white;
-}
+}/*# sourceMappingURL=styles.css.map */

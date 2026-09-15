@@ -32,3 +32,6 @@ Title is Music Collection and Suggestions, a place for me to collect and suggest
 
 ## Week 7 project progress
     Created data.js, which contains a declaration as needed for the items array, which will eventually contain the items in a list. Added the neccesary images in the folder to add to it. Did the requested changes to the table in the about page, as well as added the caption that was requested. Adjusted the styling of a few elements as well. Deleted the uneeded DOM code that was requested to be deleted as well.
+
+## Checkpoint 8 progress
+    Changed it from flexbox to grid, and did the requested changes to the css. the additonal property was align items, and the css framework material i used was implementing scss files in order to be able to use mixins within my css.
