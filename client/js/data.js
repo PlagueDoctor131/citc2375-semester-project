@@ -1,0 +1,79 @@
+let items = 
+[
+    {
+        id : "item1",
+        name : "Thee Sacred Souls: Tiny Desk Set",
+        artist : "Thee Sacred Souls",
+        genre : "Soul/R&B",
+        category : "Tiny Desk Set",
+        images : [
+            "images/thee-sacred-souls.jpg"
+        ],
+        description : "Thee Sacred Souls are a soul/R&B band that has been around for a while. They have a unique sound that is a mix of soul, R&B, and funk. They have a great live show and are worth checking out if you get the chance!<br>I especially like their <a href=\"https://youtu.be/-4J-f5lkCLo?si=MgJH2BDwmHUafPSK\" target=\"_blank\">Tiny Desk Set</a>, as it is a fantastic representation of their skills and crowdwork."
+    },
+    {
+        id : "item2",
+        name : "Ca7riel and Paco Amoroso: Tiny Desk Set",
+        artist : "Ca7riel and Paco Amoroso",
+        genre : "Indie/Alternative",
+        category : "Tiny Desk Set",
+        images : [
+            "images/ca7riel-paco-amoroso.jpg"
+        ],
+        description : "Ca7riel and Paco Amoroso are an indie/alternative duo known for their unique sound and creative approach to music. Their Tiny Desk Set is a great representation of their artistic vision.<br>I love their <a href=\"https://youtu.be/9kqnsoY94L8?si=1QfjTo73tqRzRNYk\" target=\"_blank\">Tiny Desk Set</a> for the energy they bring to the studio. I listened to it the first time, and had to go back and listen agin!"
+    },
+    {
+        id : "item3",
+        name : "08 Jetta: A Kai Banks Joint",
+        artist : "Kai Banks",
+        genre : "Jazz Rap",
+        category : "Albums",
+        images : [
+            "images/08-jetta.jpg"
+        ],
+        description : "08 Jetta is Kai Banks' debut album, showcasing his blend of Jazz and Rap, as well as his lyrical prowess. I prefer <a href=\"https://youtu.be/LCu9gl_HbzQ?si=HA3C-p4FvvSeeqrx\" target=\"_blank\">this definitive live version</a> of the album, rather than the studio version.<br>I first discovered this through an instagram reel, where Kai picked his saxophonist via the subway, recruiting him into the studio to record the album. This was not a fake story, but actually the way it happened!"
+    },
+    {
+        id : "item4",
+        name : "Dr. Aftershave And The Mixed Pickles",
+        artist : "Missus Beastly",
+        genre : "Jazz-Rock",
+        category : "Albums",
+        images : [
+            "images/dr_aftershave.png"
+        ],
+        description : "Missus Beastly is a psychadelic rock band that has been around for 5+ decades. They have a unique sound that is a mix of jazz, rock, and funk. This album, their third studio album, is a fantastic showing of their sound and prowess. I would suggest listening to <a href=\"https://youtu.be/UxmI-YLbBgY?si=q77qDi1AngJxhUzo\" target=\"_blank\">the full album</a>!"
+    },
+    {
+        id : "item5",
+        name : "Oṃ Maṇi Padme Hūṃ, part II",
+        artist : "Chris Christodoulou",
+        genre : "Prog Rock",
+        category : "Video Games",
+        images : [
+            "images/om_mani.png"
+        ],
+        description : "Chris Christodoulou is one of my favorite composers for video games and other projects. He creates prog rock and other genres of music for titles such as Risk of Rain, one of my favorite video game series of all time! One of my favorite compositions by him is this song, but it is not by much, his entire discography is legendary. I would suggest listening to <a href=\"https://youtu.be/9HDsr1J9pho?si=FQ_z92aLabIHRFqo\" target=\"_blank\">the full song</a>!"
+    },
+    {
+        id : "item6",
+        name : "The Rain Formerly Known As Purple",
+        artist : "Chris Christodoulou",
+        genre : "Prog Rock",
+        category : "Video Games",
+        images : [
+            "images/formerly_purple.png"
+        ],
+        description : "Chris Christodoulou is one of my favorite composers for video games and other projects. He creates prog rock and other genres of music for titles such as Risk of Rain, one of my favorite video game series of all time! Another one of his top creations, in my opinion, is The Rain formerly known as Purple. Modeled after both the song by Prince, as well as referencing Prince's rebrand after his label issues, it is a masterful composition.I would suggest listening to <a href=\"https://youtu.be/EGXPAoyP_cg?si=-HQIii3iFF95q5NJ\" target=\"_blank\">the full song</a>!"
+    }
+];
+
+function getItem(id) {
+    return items.find(item => item.id === id);
+}
+function getCategory(category) {
+    return items.filter(item => item.category === category);
+}
+JSON.stringify(items);
+JSON.parse(JSON.stringify(items));
+console.log(JSON.parse(JSON.stringify(items[0])));

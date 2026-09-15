@@ -80,10 +80,7 @@ nav {
     justify-content: center;
     gap: 12px;
 }
-a:visited{
-    color: var(--link-color);
-}
-a:link{
+a:visited, a:link{
     color: var(--link-color);
 }
 a:hover{
@@ -118,4 +115,11 @@ tr:nth-child(odd) {
 }
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+caption {
+  caption-side: top;
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+  background-color: white;
 }

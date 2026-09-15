@@ -29,3 +29,6 @@ Title is Music Collection and Suggestions, a place for me to collect and suggest
 
 ## Week 6 project progress
     Short one this week - added app.js and added a few parameters that were requested. Started to use document.getelementbyid but then saw that the instructions specifically denied that so I have commented those out for now. displays messages in the console.
+
+## Week 7 project progress
+    Created data.js, which contains a declaration as needed for the items array, which will eventually contain the items in a list. Added the neccesary images in the folder to add to it. Did the requested changes to the table in the about page, as well as added the caption that was requested. Adjusted the styling of a few elements as well. Deleted the uneeded DOM code that was requested to be deleted as well.
