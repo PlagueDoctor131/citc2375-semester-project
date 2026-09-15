@@ -7,3 +7,5 @@ if (visible) {
 }
 console.log(`Number of entries: 3`);
 console.log(`Summary: ${summary}`);
+console.log(`Number of category Video Games: ${getCountbyCategory("Video Games")}`)
+console.log(`Item 1 is: ${JSON.stringify(getItem("item1"))}`)
