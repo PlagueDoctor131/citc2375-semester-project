@@ -4,7 +4,9 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
+.hidden{
+  display: none;
+}
 :root{
     --color-background: rgb(193,42,95);
     --color-text: #333;

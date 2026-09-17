@@ -1,5 +1,9 @@
+.hidden {
+  display: none;
+}
+
 :root {
-  --color-background: rgb(193,42,95);
+  --color-background: rgb(193, 42, 95);
   --color-text: #333;
   --background-image: url(../images/background_image_blur.png);
   --link-color: #000000;
@@ -19,6 +23,23 @@
 
 .content-width h1 {
   color: var(--link-color);
+}
+
+summary {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+summary .item-info {
+    min-height: 5em;
+}
+
+summary::after{
+  display:none;
 }
 
 body {
@@ -45,14 +66,15 @@ body {
   margin-right: 25%;
 }
 
-input[type=text], input[type=url] {
+input[type="text"],
+input[type="url"] {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-input[type=file] {
+input[type="file"] {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -66,21 +88,21 @@ textarea {
   border-radius: 4px;
 }
 
-.card {
+.item {
   max-width: 500px;
   background-color: #a5a4a4;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 15px;
   margin-bottom: 20px;
+  flex: 1 1 30%;
 }
 
 .container {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  align-items: baseline;
 }
 
 nav {
@@ -89,7 +111,8 @@ nav {
   gap: 12px;
 }
 
-a:visited, a:link {
+a:visited,
+a:link {
   color: var(--link-color);
 }
 
@@ -119,7 +142,8 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -139,4 +163,4 @@ caption {
   font-style: italic;
   margin-top: 10px;
   background-color: white;
-}/*# sourceMappingURL=styles.css.map */
+} /*# sourceMappingURL=styles.css.map */
