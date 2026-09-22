@@ -21,6 +21,10 @@
     <p id="preamble">This is my CITC 2375 semester project. It's for collection and doing music suggestions!</p>
   </main>
   <button type="button" id="filter-button" onclick="toggleFilterControls()">Filter</button>
+  <span class="bookmarks-control">
+  <label for="bookmarks-only" >Bookmarks Only?</label>
+    <input type="checkbox"  id="bookmarks-only">
+  </span>
   <div id="filter-controls" class="hidden" style="background:#fff; padding:7px; border-radius:6px; box-shadow:0 0 5px #aaa;">
     <h3>Filter Controls</h3>
     <label for="name-filter">Name</label>
@@ -28,16 +32,12 @@
     <label for="genre-filter">Genre</label>
     <select id="genre-filter">
       <option>Select one</option>
-      <option>Soul/R&B</option>
-      <option>Indie/Alternative</option>
-      <option>Jazz Rap</option>
     </select>
     <label for="category-filter">Category</label>
     <select id="category-filter">
       <option>Select one</option>
-      <option>Albums</option>
-      <option>Tiny Desk Set</option>
     </select>
+    
     <button type="submit" id="submit-filters">Submit</button>
   </div>
   <div id="Music-Collection" class="container"></div>

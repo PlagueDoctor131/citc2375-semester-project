@@ -35,3 +35,6 @@ Title is Music Collection and Suggestions, a place for me to collect and suggest
 
 ## Checkpoint 8 progress
     Changed it from flexbox to grid, and did the requested changes to the css. the additonal property was align items, and the css framework material i used was implementing scss files in order to be able to use mixins within my css.
+
+## Checkpoint 9 progress
+    Big one - now using DOM calls in order to display the items, and ordered them into a json file, making it easier to fetch. Rendering them on page load, as well as being able to add/remove them relatively easily. Also added a filter functionality so that they can filter out songs by name, genre, or category (partial name is accepted as well!). ALSO added a favorites feature, where the user can favorite songs and filter by them. favorites are saved in localstorage, and localstorage is held onto between reloads. Also saved last favorited category as per requirements, it is console logged.
