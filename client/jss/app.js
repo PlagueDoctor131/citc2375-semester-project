@@ -1,26 +1,20 @@
 const title = "Music Collection and Suggestions";
 const visible = true;
+const sampleCount = 3;
+const addedCount = 2;
+const featuredMultiplier = 2;
+const totalCollectionItems = sampleCount + addedCount;
+const projectedDisplayCount = totalCollectionItems * featuredMultiplier;
 const summary = `This is my project for CITC 2375. The official title is ${title}.`;
+const hasFeaturedItems = totalCollectionItems >= sampleCount;
 
-if (visible) {
-    console.log(`The element with ID 'Music-Collection' is visible.`);
-}
-
-/**
-if (document.getElementById('Music-Collection').checkVisibility()) {
-    console.log(`The element with ID 'Music-Collection' is visible.`);
-}
-else if (!document.getElementById('Music-Collection').checkVisibility()) {
-    console.log(`The element with ID 'Music-Collection' is not visible.`);
+if (hasFeaturedItems && visible) {
+    console.log(`The ${title} page is ready to display ${projectedDisplayCount} collection items.`);
+} else {
+    console.log(`The ${title} page needs more content before launch.`);
 }
 
- function countEntries(){
-    // Implementation for counting entries
-    const count = document.getElementById('Music-Collection').querySelectorAll(':scope > div').length;
-    console.log(`Number of entries: ${count}`);
-    return count;
-}
-    OOPS DIDN'T SEE NOT TO USE DOCUMENT.QUERY :D
-    */ 
-console.log(`Number of entries: 3`);
+const averageItemsPerSection = totalCollectionItems / 2;
+console.log(`Average items per section: ${averageItemsPerSection.toFixed(1)}`);
+console.log(`Number of sample entries: ${sampleCount}`);
 console.log(`Summary: ${summary}`);
