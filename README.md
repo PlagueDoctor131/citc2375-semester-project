@@ -7,14 +7,35 @@ Title is Music Collection and Suggestions, a place for me to collect and suggest
 - Project Topic: A place for me to collect and suggest music for all those who would like to partake.
 
 ## Planned Data Model
-- Header
-- Category
-- Genre
-- Mp3
-- Image
-- Artist
-- Name
-- Hyperlink
+The project will organize music entries in a simple structured format for the collection and display pages.
+
+### Music Collection Entry
+- id: unique identifier for each entry
+- title: song or album title
+- artist: performer or band name
+- genre: category such as soul/R&B, indie/alternative, or jazz rap
+- category: collection type such as Tiny Desk Set or Album
+- image: file name or URL for the cover art or related image
+- description: short summary or notes about the track or album
+- link: external YouTube or streaming URL
+- addedBy: name of the person submitting the entry
+- createdAt: date the item was added
+
+### Example object
+```json
+{
+  "id": 1,
+  "title": "Tiny Desk Set",
+  "artist": "Thee Sacred Souls",
+  "genre": "Soul/R&B",
+  "category": "Tiny Desk Set",
+  "image": "thee-sacred-souls.jpg",
+  "description": "A soulful performance featuring a vintage funk-inspired sound.",
+  "link": "https://youtu.be/-4J-f5lkCLo?si=MgJH2BDwmHUafPSK",
+  "addedBy": "G. Graves",
+  "createdAt": "2026-09-29"
+}
+```
 
 ## Project Progress
     Added styling within styles.css in order to differentiate cards, as well as making the formatting the same between all of the pages. Also added background imaging, and a backup background color if it doesn't load.
@@ -29,3 +50,8 @@ Title is Music Collection and Suggestions, a place for me to collect and suggest
 
 ## Week 6 project progress
     Short one this week - added app.js and added a few parameters that were requested. Started to use document.getelementbyid but then saw that the instructions specifically denied that so I have commented those out for now. displays messages in the console.
+
+## Week 7 Midterm Exam Update
+    Project Description: A site to display music suggestions by myself, and possibly others in the future. I have a placeholder add music form for that functionality later, as well as an about page with a table that shows the currently added categories and other sortables.
+
+    Planned 
