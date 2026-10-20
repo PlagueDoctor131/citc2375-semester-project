@@ -18,3 +18,5 @@ const averageItemsPerSection = totalCollectionItems / 2;
 console.log(`Average items per section: ${averageItemsPerSection.toFixed(1)}`);
 console.log(`Number of sample entries: ${sampleCount}`);
 console.log(`Summary: ${summary}`);
+console.log(`Albums: ` + getCountbyCategory("Albums"));
+console.log(getItem("item3"));

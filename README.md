@@ -55,3 +55,20 @@ The project will organize music entries in a simple structured format for the co
     Project Description: A site to display music suggestions by myself, and possibly others in the future. I have a placeholder add music form for that functionality later, as well as an about page with a table that shows the currently added categories and other sortables.
 
     Planned 
+
+## Checkpoint 7 progress
+    Created data.js, which contains a declaration as needed for the items array, which will eventually contain the items in a list. Added the neccesary images in the folder to add to it. Did the requested changes to the table in the about page, as well as added the caption that was requested. Adjusted the styling of a few elements as well.
+    Example item with fields:
+```json
+{
+    "id" : "item6",
+    "name" : "The Rain Formerly Known As Purple",
+    "artist" : "Chris Christodoulou",
+    "genre" : "Prog Rock",
+    "category" : "Video Games",
+    "images" : [
+        "images/formerly_purple.png"
+    ],
+    "description" : "Chris Christodoulou is one of my favorite composers for video games and other projects. He creates prog rock and other genres of music for titles such as Risk of Rain, one of my favorite video game series of all time! Another one of his top creations, in my opinion, is The Rain formerly known as Purple. Modeled after both the song by Prince, as well as referencing Prince's rebrand after his label issues, it is a masterful composition.I would suggest listening to <a href=\"https://youtu.be/EGXPAoyP_cg?si=-HQIii3iFF95q5NJ\" target=\"_blank\">the full song</a>!"
+}
+```
