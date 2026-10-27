@@ -72,3 +72,5 @@ The project will organize music entries in a simple structured format for the co
     "description" : "Chris Christodoulou is one of my favorite composers for video games and other projects. He creates prog rock and other genres of music for titles such as Risk of Rain, one of my favorite video game series of all time! Another one of his top creations, in my opinion, is The Rain formerly known as Purple. Modeled after both the song by Prince, as well as referencing Prince's rebrand after his label issues, it is a masterful composition.I would suggest listening to <a href=\"https://youtu.be/EGXPAoyP_cg?si=-HQIii3iFF95q5NJ\" target=\"_blank\">the full song</a>!"
 }
 ```
+## Checkpoint 8 progress
+    Changed the parent container to css grid , but left nav as flex. Added the requisite CSS in order to make the site look like how it needs to according to the assignment.

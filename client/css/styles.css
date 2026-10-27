@@ -3,15 +3,22 @@
     --color-text: #333;
     --background-image: url(../images/background_image_blur.png);
     --link-color: #000000;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
 }
 .song-image {
     width: 100%;
     height: auto;
+    display: block;
 }
 .content-width {
-    max-width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding:20px;
+    padding: var(--space-5);
     text-align: center;
 }
 .content-width h1 {
@@ -20,11 +27,12 @@
 body {
     font-family: arial,helvetica,sans-serif;
     color: var(--color-text);
-    padding: 20px;
+    padding: var(--space-5);
     background-size: cover;
     background-repeat: no-repeat;
     background-image: var(--background-image);
     background-color: var(--color-background);
+    margin: 0;
 }
 #add-music-form {
     display: flex;
@@ -59,26 +67,29 @@ textarea{
 }
 
 .card {
-    flex: 1 1 50%;
-    max-width: 500px;
     background-color: #a5a4a4;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    margin-bottom: 20px;
-    
+    padding: var(--space-4);
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
 }
 .container{
-    display:flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-5);
+    align-items: stretch;
+    justify-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-2);
 }
 nav {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: var(--space-3);
+    flex-wrap: wrap;
 }
 a:visited{
     color: var(--link-color);
@@ -99,7 +110,7 @@ a:focus{
 #preamble {
     font-size: 1.2em;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: var(--space-5);
     text-align: center;
 }
 table {
