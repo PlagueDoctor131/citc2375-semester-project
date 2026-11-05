@@ -50,6 +50,14 @@ summary .item-info {
 .bookmark-btn {
   display: block;
   margin: 0 auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #1d1d1d;
+}
+
+.bookmark-star {
+  font-size: 1.25rem;
 }
 
 summary::after{

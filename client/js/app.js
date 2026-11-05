@@ -99,7 +99,7 @@ function renderItems() {
         <h4 class="genre"><strong>Genre:</strong> ${item.genre}</h4>
         <h5 class="category"><strong>Category:</strong> ${item.category}</h5>
         <p class="description">${item.description}</p>
-        <button type="button" class="button bookmark-btn" data-item-id="${item.id}" aria-label="Bookmark ${item.name}" aria-pressed="${bookmarkList.includes(String(item.id))}"><i class="${bookmarkList.includes(String(item.id)) ? 'fa-solid' : 'fa-regular'} fa-star bookmark-star"></i></button>
+        <button type="button" class="button bookmark-btn" data-item-id="${item.id}" aria-label="Bookmark ${item.name}" aria-pressed="${bookmarkList.includes(String(item.id))}"><i class="${bookmarkList.includes(String(item.id)) ? 'fa-solid' : 'fa-regular'} fa-bookmark bookmark-star"></i></button>
         `;
         summary.appendChild(info)
         card.appendChild(summary);
