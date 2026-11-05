@@ -74,3 +74,6 @@ The project will organize music entries in a simple structured format for the co
 ```
 ## Checkpoint 8 progress
     Changed the parent container to css grid , but left nav as flex. Added the requisite CSS in order to make the site look like how it needs to according to the assignment.
+
+## Checkpoint 9 progress
+    Big one - now using DOM calls in order to display the items, and ordered them into a json file, making it easier to fetch. Rendering them on page load, as well as being able to add/remove them relatively easily. Also added a filter functionality so that they can        filter out songs by name, genre, or category (partial name is accepted as well!). ALSO added a favorites feature, where the user can favorite songs and filter by them. favorites are saved in localstorage, and localstorage is held onto between reloads. Also saved        last favorited category as per requirements, it is console logged.
