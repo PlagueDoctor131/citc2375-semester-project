@@ -77,3 +77,6 @@ The project will organize music entries in a simple structured format for the co
 
 ## Checkpoint 9 progress
     Big one - now using DOM calls in order to display the items, and ordered them into a json file, making it easier to fetch. Rendering them on page load, as well as being able to add/remove them relatively easily. Also added a filter functionality so that they can        filter out songs by name, genre, or category (partial name is accepted as well!). ALSO added a favorites feature, where the user can favorite songs and filter by them. favorites are saved in localstorage, and localstorage is held onto between reloads. Also saved        last favorited category as per requirements, it is console logged.
+
+## Checkpoint 10 progress
+    Changed to a react frontend - client static is still there as a reference. Rebuilt the front page with react elements, with some updated styling to boot in order to refresh it. The filter is saved in localstorage, along with the bookmarks. The transition was            smooth, and it was an interesting project. Some generative AI was used via VS code workspace for busywork such as variable labeling. I preserved the image zooming from before the transition, i think we needed to? Additionally, i brought over the add and about pages     as instructed.
