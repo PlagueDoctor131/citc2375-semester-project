@@ -1,14 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router';
 import Header from './components/Header.jsx';
-import ItemList from './components/ItemList.jsx';
-import { items } from './data.js';
+import About from './views/About.jsx';
+import AddItem from './views/AddItem.jsx';
+import Home from './views/Home.jsx';
+import { items as initialItems } from './data.js';
 import './App.css';
 
 const categoryStorageKey = 'music-collection-category';
 const genreStorageKey = 'music-collection-genre';
 const bookmarkStorageKey = 'music-collection-bookmarks';
+const collectionStorageKey = 'music-collection-items';
 
 export default function App() {
+  const [items, setItems] = useState(() => {
+    const saved = localStorage.getItem(collectionStorageKey);
+    if (!saved) return initialItems;
+
+    try {
+      const savedItems = JSON.parse(saved);
+      return Array.isArray(savedItems) ? savedItems : initialItems;
+    } catch (error) {
+      console.error('Could not restore the saved music collection.', error);
+      return initialItems;
+    }
+  });
   const [selectedCategory, setSelectedCategory] = useState(() => {
     const saved = localStorage.getItem(categoryStorageKey);
     return saved || 'All';
@@ -19,9 +35,6 @@ export default function App() {
     return saved || 'All';
   });
 
-  const [searchTerm, setSearchTerm] = useState('');
-  const [bookmarksOnly, setBookmarksOnly] = useState(false);
-
   const [favoriteIds, setFavoriteIds] = useState(() => {
     try {
       const saved = localStorage.getItem(bookmarkStorageKey);
@@ -30,6 +43,14 @@ export default function App() {
       return [];
     }
   });
+
+  useEffect(() => {
+    localStorage.setItem(bookmarkStorageKey, JSON.stringify(favoriteIds));
+  }, [favoriteIds]);
+
+  useEffect(() => {
+    localStorage.setItem(collectionStorageKey, JSON.stringify(items));
+  }, [items]);
 
   function handleCategoryChange(event) {
     const category = event.target.value;
@@ -43,107 +64,40 @@ export default function App() {
     localStorage.setItem(genreStorageKey, genre);
   }
 
-
   function handleToggleFavorite(itemId) {
     setFavoriteIds((current) => {
-      const updated = current.includes(itemId)
+      return current.includes(itemId)
         ? current.filter((id) => id !== itemId)
         : [...current, itemId];
-
-      localStorage.setItem(bookmarkStorageKey, JSON.stringify(updated));
-      return updated;
     });
   }
 
   const categories = ['All', ...new Set(items.map((item) => item.category))];
   const genres = ['All', ...new Set(items.map((item) => item.genre))];
 
-  const filteredItems = items.filter((item) => {
-    const matchesCategory =
-      selectedCategory === 'All' || item.category === selectedCategory;
-
-    const matchesGenre = selectedGenre === 'All' || item.genre === selectedGenre;
-
-    const normalizedSearch = searchTerm.trim().toLowerCase();
-    const matchesSearch =
-      normalizedSearch === '' ||
-      item.name.toLowerCase().includes(normalizedSearch) ||
-      item.artist.toLowerCase().includes(normalizedSearch);
-
-    const matchesBookmarks = !bookmarksOnly || favoriteIds.includes(item.id);
-
-    return (
-      matchesCategory &&
-      matchesGenre &&
-      matchesSearch &&
-      matchesBookmarks
-    );
-  });
-
   return (
     <>
       <Header />
-
-      <main className="page-shell">
-        <section className="controls-panel" aria-label="Item filters">
-          <div className="filter-row">
-            <label htmlFor="artist-filter">Name / Artist</label>
-            <input
-              id="artist-filter"
-              type="text"
-              value={searchTerm}
-              onChange={(event) => setSearchTerm(event.target.value)}
-              placeholder="Search by name or artist"
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              items={items}
+              categories={categories}
+              genres={genres}
+              selectedCategory={selectedCategory}
+              selectedGenre={selectedGenre}
+              onCategoryChange={handleCategoryChange}
+              onGenreChange={handleGenreChange}
+              favoriteIds={favoriteIds}
+              onToggleFavorite={handleToggleFavorite}
             />
-          </div>
-
-          <div className="filter-row">
-            <label htmlFor="genre-filter">Genre</label>
-            <select
-              id="genre-filter"
-              value={selectedGenre}
-              onChange={handleGenreChange}
-            >
-              {genres.map((genre) => (
-                <option key={genre} value={genre}>
-                  {genre === 'All' ? 'All genres' : genre}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="filter-row">
-            <label htmlFor="category-filter">Category</label>
-            <select
-              id="category-filter"
-              value={selectedCategory}
-              onChange={handleCategoryChange}
-            >
-              {categories.map((category) => (
-                <option key={category} value={category}>
-                  {category === 'All' ? 'All categories' : category}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <label className="bookmark-toggle" htmlFor="bookmarks-only">
-            <input
-              id="bookmarks-only"
-              type="checkbox"
-              checked={bookmarksOnly}
-              onChange={(event) => setBookmarksOnly(event.target.checked)}
-            />
-            Bookmarks only
-          </label>
-        </section>
-
-        <ItemList
-          items={filteredItems}
-          favoriteIds={favoriteIds}
-          onToggleFavorite={handleToggleFavorite}
+          }
         />
-      </main>
+        <Route path="/about" element={<About />} />
+        <Route path="/add" element={<AddItem onAddItem={setItems} />} />
+      </Routes>
     </>
   );
 }

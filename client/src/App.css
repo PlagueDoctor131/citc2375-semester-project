@@ -69,6 +69,64 @@ select {
   padding: 0 1rem 2rem;
 }
 
+.content-page,
+.add-item-form {
+  max-width: 760px;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  background: var(--panel-bg);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.content-page section + section {
+  margin-top: 2rem;
+}
+
+.content-page table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.content-page th,
+.content-page td {
+  padding: 0.65rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.add-item-form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.add-item-form h2 {
+  margin: 0 0 0.5rem;
+}
+
+.add-item-form label {
+  font-weight: 700;
+}
+
+.add-item-form input,
+.add-item-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.add-item-form button {
+  margin-top: 0.5rem;
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 6px;
+  background: #1d1d1d;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .controls-panel {
   display: grid;
   grid-template-columns: repeat(2, minmax(180px, 1fr));

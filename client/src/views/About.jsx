@@ -1,29 +1,13 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Music Collection and Suggestions</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-  </head>
-  <body>
-    <header class="content-width">
-      <h1>Music Collection and Suggestions</h1>
-      <nav>
-        <a href="/">Home Page</a>
-        <a href="/about.html">About</a>
-        <a href="/add.html">Add Music</a>
-      </nav>
-    </header>
-
-    <main>
+export default function About() {
+  return (
+    <main className="page-shell content-page">
       <section aria-labelledby="about-heading">
         <h2 id="about-heading">About this project</h2>
-        <p id="preamble">
-          This application addresses the problem of folks having a very narrow music
-          taste, and struggling to find new artists! This can be used by anyone, as
-          music can be relatively universal across the world. This will be a
-          collection of mp3s as well as artist info.
+        <p>
+          This application addresses the problem of folks having a very narrow
+          music taste, and struggling to find new artists! This can be used by
+          anyone, as music can be relatively universal across the world. This
+          will be a collection of mp3s as well as artist info.
         </p>
       </section>
 
@@ -42,7 +26,7 @@
             <tr>
               <th scope="row">Tiny Desk Set</th>
               <td>Thee Sacred Souls, Ca7riel and Paco Amoroso</td>
-              <td>Soul/R&B and Indie/Alternative</td>
+              <td>Soul/R&amp;B and Indie/Alternative</td>
             </tr>
             <tr>
               <th scope="row">Albums</th>
@@ -58,6 +42,5 @@
         </table>
       </section>
     </main>
-    <footer></footer>
-  </body>
-</html>
+  );
+}

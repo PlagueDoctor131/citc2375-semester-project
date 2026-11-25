@@ -80,3 +80,6 @@ The project will organize music entries in a simple structured format for the co
 
 ## Checkpoint 10 progress
     Changed to a react frontend - client static is still there as a reference. Rebuilt the front page with react elements, with some updated styling to boot in order to refresh it. The filter is saved in localstorage, along with the bookmarks. The transition was            smooth, and it was an interesting project. Some generative AI was used via VS code workspace for busywork such as variable labeling. I preserved the image zooming from before the transition, i think we needed to? Additionally, i brought over the add and about pages     as instructed.
+
+## Checkpoint 11 progress
+    Added React Router for client-side navigation between the Home, About, and Add Music views. Moved the collection into shared React state and replaced the temporary Add page with a controlled form. New items are saved in localStorage and restored after a page refresh. Favorite changes are also saved with useEffect, while the collection filters and no-results behavior continue to work.
