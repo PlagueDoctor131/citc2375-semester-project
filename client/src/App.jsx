@@ -4,7 +4,7 @@ import Header from './components/Header.jsx';
 import About from './views/About.jsx';
 import AddItem from './views/AddItem.jsx';
 import Home from './views/Home.jsx';
-import { items as initialItems } from './data.js';
+import { loadItems } from './api.ts';
 import './App.css';
 
 const categoryStorageKey = 'music-collection-category';
@@ -13,18 +13,9 @@ const bookmarkStorageKey = 'music-collection-bookmarks';
 const collectionStorageKey = 'music-collection-items';
 
 export default function App() {
-  const [items, setItems] = useState(() => {
-    const saved = localStorage.getItem(collectionStorageKey);
-    if (!saved) return initialItems;
-
-    try {
-      const savedItems = JSON.parse(saved);
-      return Array.isArray(savedItems) ? savedItems : initialItems;
-    } catch (error) {
-      console.error('Could not restore the saved music collection.', error);
-      return initialItems;
-    }
-  });
+  const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(() => {
     const saved = localStorage.getItem(categoryStorageKey);
     return saved || 'All';
@@ -45,12 +36,60 @@ export default function App() {
   });
 
   useEffect(() => {
+    let isCurrent = true;
+
+    loadItems()
+      .then((loadedItems) => {
+        if (!isCurrent) return;
+
+        const saved = localStorage.getItem(collectionStorageKey);
+        if (saved) {
+          try {
+            const savedItems = JSON.parse(saved);
+            if (Array.isArray(savedItems)) {
+              setItems(savedItems);
+              return;
+            }
+          } catch (error) {
+            console.error('Could not restore the saved music collection.', error);
+          }
+        }
+
+        setItems(loadedItems);
+      })
+      .catch((error) => {
+        if (!isCurrent) return;
+
+        setLoadError(
+          error instanceof Error ? error.message : 'Unable to load music items.',
+        );
+        const saved = localStorage.getItem(collectionStorageKey);
+        if (saved) {
+          try {
+            const savedItems = JSON.parse(saved);
+            if (Array.isArray(savedItems)) setItems(savedItems);
+          } catch (restoreError) {
+            console.error('Could not restore the saved music collection.', restoreError);
+          }
+        }
+      })
+      .finally(() => {
+        if (isCurrent) setIsLoading(false);
+      });
+
+    return () => {
+      isCurrent = false;
+    };
+  }, []);
+
+  useEffect(() => {
     localStorage.setItem(bookmarkStorageKey, JSON.stringify(favoriteIds));
   }, [favoriteIds]);
 
   useEffect(() => {
+    if (isLoading) return;
     localStorage.setItem(collectionStorageKey, JSON.stringify(items));
-  }, [items]);
+  }, [items, isLoading]);
 
   function handleCategoryChange(event) {
     const category = event.target.value;
@@ -78,6 +117,8 @@ export default function App() {
   return (
     <>
       <Header />
+      {isLoading && <p role="status">Loading music items...</p>}
+      {loadError && <p role="alert">{loadError}</p>}
       <Routes>
         <Route
           path="/"

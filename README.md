@@ -83,3 +83,6 @@ The project will organize music entries in a simple structured format for the co
 
 ## Checkpoint 11 progress
     Added React Router for client-side navigation between the Home, About, and Add Music views. Moved the collection into shared React state and replaced the temporary Add page with a controlled form. New items are saved in localStorage and restored after a page refresh. Favorite changes are also saved with useEffect, while the collection filters and no-results behavior continue to work.
+
+## Checkpoint 12 progress
+    Moved the six music collection seed items into client/public/data.json so Vite and the deployed site can serve them as static JSON. Added TypeScript support for the data-loading layer with a ProjectItem interface and an asynchronous loadItems function that fetches /data.json. The React app now loads the collection asynchronously, shows a loading message while the request is in progress, and displays an error message if loading fails. Saved collections in localStorage are still restored when available. Verified the JSON endpoint, TypeScript check, lint, and production build.
